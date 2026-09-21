@@ -4,9 +4,9 @@
   "author": "Shivansh Vasu",
   "description": "Full-Stack MERN E-Commerce App",
   "scripts": {
-    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-    "build": "cd frontend && npm install && npm run build",
-    "start": "cd backend && npm start",
+    "install-all": "npm install && npm --prefix backend install --no-save && npm --prefix frontend install --no-save",
+    "build": "npm --prefix backend install --no-save && npm --prefix frontend install --no-save && npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
     "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "start:backend": "npm --prefix backend run dev",
     "start:frontend": "npm --prefix frontend run dev",
